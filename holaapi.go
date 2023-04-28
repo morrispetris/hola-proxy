@@ -200,8 +200,10 @@ func background_init(ctx context.Context, client *http.Client, user_uuid string)
 	qs := make(url.Values)
 	qs.Add("uuid", user_uuid)
 	fmt.Println(qs)
-	fmt.Println(post_data);
+	fmt.Println(post_data)
+	fmt.Println(BG_INIT_URL)
 	resp, err := do_req(ctx, client, "POST", BG_INIT_URL, qs, post_data)
+	fmt.Println(resp)
 	if err != nil {
 		reterr = err
 		return
