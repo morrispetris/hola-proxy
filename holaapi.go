@@ -210,6 +210,7 @@ func background_init(ctx context.Context, client *http.Client, user_uuid string)
 	}
 
 	reterr = json.Unmarshal(resp, &res)
+	fmt.Println(reterr)
 	if reterr == nil && res.Blocked {
 		if res.Permanent {
 			reterr = PermanentBanError
@@ -256,6 +257,7 @@ func zgettunnels(ctx context.Context,
 		return
 	}
 	err = json.Unmarshal(data, &tunnels)
+	fmt.Println(err)
 	if err != nil {
 		return nil, fmt.Errorf("unable to unmashal zgettunnels response: %w", err)
 	}
