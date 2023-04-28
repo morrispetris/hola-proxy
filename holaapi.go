@@ -346,6 +346,7 @@ func Tunnels(ctx context.Context,
 	ctx1, cancel := context.WithTimeout(ctx, timeout)
 	defer cancel()
 	initres, err := background_init(ctx1, client, user_uuid)
+	fmt.Println(initres)
 	if err != nil {
 		reterr = err
 		return
