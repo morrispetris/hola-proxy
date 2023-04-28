@@ -333,6 +333,7 @@ func Tunnels(ctx context.Context,
 	backoffDeadline time.Duration,
 ) (res *ZGetTunnelsResponse, user_uuid string, reterr error) {
 	u := uuid.New()
+	fmt.Println(u)
 	user_uuid = hex.EncodeToString(u[:])
 	ctx1, cancel := context.WithTimeout(ctx, timeout)
 	defer cancel()
