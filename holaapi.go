@@ -250,6 +250,7 @@ func zgettunnels(ctx context.Context,
 	params.Add("session_key", strconv.FormatInt(session_key, 10))
 	params.Add("is_premium", "0")
 	data, err := do_req(ctx, client, "", ZGETTUNNELS_URL, params, nil)
+	fmt.Println(data);
 	if err != nil {
 		reterr = err
 		return
