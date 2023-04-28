@@ -172,6 +172,7 @@ func do_req(ctx context.Context, client *http.Client, method, url string, query,
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println(body)
 	return body, nil
 }
 
